@@ -1,6 +1,5 @@
-<div>
+<div class="fields">
         <%= f.label :amount, "Step Ingredient" %>
         <%= f.text_field :amount %>
-        <%= f.check_box :_destroy %>
-        <%= f.label :_destroy, "Remove Step Ingredient" %>
+        <%= link_to_remove_fields "remove", f %>
 </div>

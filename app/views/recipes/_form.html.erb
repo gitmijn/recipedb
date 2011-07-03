@@ -31,7 +31,8 @@
   <div>
     <% f.fields_for :steps do |builder| %>
       <%= render 'step_fields', :f => builder %>
-  <% end %>
+    <% end %>
+    <p><%= link_to_add_fields "Add Step", f, :steps %></p>
   <div class="actions">
     <%= f.submit %>
   </div>
