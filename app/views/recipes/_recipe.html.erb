@@ -1,0 +1,5 @@
+<% div_for recipe do %>
+  <h2><%= link_to_unless_current h(recipe.title), recipe %></h2>
+  <%= simple_format h(recipe.author_name) %>
+<% end %>
+

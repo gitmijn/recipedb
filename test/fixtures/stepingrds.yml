@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  recipe_id: 1
+  step_id: 1
+  ingredient_id: 1
+  amount: 
+  unit: MyText
+
+two:
+  recipe_id: 1
+  step_id: 1
+  ingredient_id: 1
+  amount: 
+  unit: MyText

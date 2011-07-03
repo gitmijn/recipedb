@@ -1,0 +1,10 @@
+      <div>
+        <%= f.label :instruction, "Step" %><br />
+        <%= f.text_area :instruction, :rows => 3 %>
+        <%= f.check_box :_destroy %>
+        <%= f.label :_destroy, "Remove Question" %>
+	</div>
+	<div>	
+<% f.fields_for :stepingrds do |builder| %>
+	<%= render "stepingrd_fields", :f => builder %>
+<% end %>
