@@ -1,19 +1,25 @@
-<%= render :partial => @recipe %> 
-<h4><%= @recipe.description %></h4>
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Destroy', @recipe, :method => :delete, :confirm => "Are you sure?" %> |
-<%= link_to 'Back', recipes_path %>
+<% title "Recipe" %>
 
-<h2>Steps</h2>
-<div id="steps">
-   <%= render :partial => @recipe.steps %>
-</div>
+<p>
+  <strong>Name:</strong>
+  <%= @recipe.title %>
+</p>
 
-<% form_for [@recipe, Step.new], :remote => true do |f| %>
-  <p>
-  <%= f.label :instruction, "New Step" %><br />
-  <%= f.text_area :instruction%>
-  </p>
-  <p><%= f.submit "Add Instruction" %></p>
+<ol>
+<% for step in @recipe.steps %>
+  <li>
+    <%= step.instruction %>
+    <ul>
+    <% for stepingrd in step.stepingrds %>
+      <li><%= stepingrd.amount %></li>
+    <% end %>
+    </ul>
+  </li>
 <% end %>
+</ol>
 
+<p>
+  <%= link_to "Edit", edit_recipe_path(@reipce) %> |
+  <%= link_to "Destroy", @recipe, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", recipes_path %>
+</p> 

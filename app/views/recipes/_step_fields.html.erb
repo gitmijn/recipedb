@@ -1,11 +1,7 @@
-<div class="fields">
-  <div>
-        <%= f.label :instruction, "Step" %><br />
-        <%= link_to_remove_fields "remove", f %><br /> 
-        <%= f.text_area :instruction, :rows => 3 %>
-      </div>
-    <% f.fields_for :stepingrds do |builder| %>
-      <%= render "stepingrd_fields", :f => builder %>
-    <% end %>
-    <p><%= link_to_add_fields "Add Ing", f, :stepingrds %></p>
-</div> 
+<p>
+  <%= f.label :instruction, "Step" %><br />
+  <%= f.text_area :instruction, :rows => 3 %><br />
+  <%= f.link_to_remove "remove" %>
+</p> 
+<%= f.fields_for :stepingrds %>
+<p><%= f.link_to_add "Add Ing", :stepingrds %></p>
